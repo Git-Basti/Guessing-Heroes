@@ -1,0 +1,148 @@
+[gd_scene load_steps=14 format=3 uid="uid://cqt4cb77ova8u"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_hlhne"]
+[ext_resource type="Texture2D" uid="uid://b0wvjgw3b8la7" path="res://assets/Backround/Main Menu Backround.png" id="1_oolhc"]
+[ext_resource type="FontFile" uid="uid://xnxfkyd78q6y" path="res://assets/fonts/alagard.ttf" id="2_eji2t"]
+[ext_resource type="Texture2D" uid="uid://d34aa8g6i5rtg" path="res://assets/ui/Button2-Hoverd.png" id="3_eawhx"]
+[ext_resource type="Texture2D" uid="uid://bkgtbvgbr2rm4" path="res://assets/ui/Button2-Pressed.png" id="4_mwbva"]
+[ext_resource type="Texture2D" uid="uid://dg68dmdeg7o3t" path="res://assets/ui/Button2.png" id="5_feib1"]
+[ext_resource type="AudioStream" uid="uid://bc02lkoot6cfw" path="res://assets/Audio/switch_005.ogg" id="7_la5cw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mvp4q"]
+texture = ExtResource("1_oolhc")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1c44"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rpuy0"]
+texture = ExtResource("3_eawhx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_txnkt"]
+texture = ExtResource("4_mwbva")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aog4y"]
+texture = ExtResource("5_feib1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ve4nn"]
+
+[node name="MainMenu" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hlhne")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mvp4q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 171.0
+offset_top = -16.0
+offset_right = 504.0
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 11
+
+[node name="StoryModeButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_eji2t")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r1c44")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rpuy0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_txnkt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aog4y")
+text = "Story"
+
+[node name="NormalModeButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_eji2t")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r1c44")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rpuy0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_txnkt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aog4y")
+text = "Normal"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_eji2t")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r1c44")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rpuy0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_txnkt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aog4y")
+text = "Optionen"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_eji2t")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r1c44")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rpuy0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_txnkt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aog4y")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -312.5
+offset_top = 80.0
+offset_right = 312.5
+offset_bottom = 174.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 7
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("2_eji2t")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/normal = SubResource("StyleBoxTexture_ve4nn")
+text = "Guessing Heroes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfx_menu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_la5cw")
+volume_db = -3.273
+bus = &"SFX"

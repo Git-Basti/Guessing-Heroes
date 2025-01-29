@@ -1,0 +1,261 @@
+[gd_scene load_steps=26 format=3 uid="uid://bsepfceuhroon"]
+
+[ext_resource type="Script" path="res://scripts/normal_mode.gd" id="1_vm7eu"]
+[ext_resource type="Texture2D" uid="uid://b0wvjgw3b8la7" path="res://assets/Backround/Main Menu Backround.png" id="2_mifxa"]
+[ext_resource type="FontFile" uid="uid://xnxfkyd78q6y" path="res://assets/fonts/alagard.ttf" id="3_ddj5p"]
+[ext_resource type="Texture2D" uid="uid://d1mmim71oqysx" path="res://assets/ui/Button.png" id="4_j61al"]
+[ext_resource type="Texture2D" uid="uid://d34aa8g6i5rtg" path="res://assets/ui/Button2-Hoverd.png" id="5_kgjyy"]
+[ext_resource type="Texture2D" uid="uid://bkgtbvgbr2rm4" path="res://assets/ui/Button2-Pressed.png" id="6_2a8op"]
+[ext_resource type="Texture2D" uid="uid://dg68dmdeg7o3t" path="res://assets/ui/Button2.png" id="7_ob6yd"]
+[ext_resource type="AudioStream" uid="uid://bc02lkoot6cfw" path="res://assets/Audio/switch_005.ogg" id="8_qrj4k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yqcta"]
+texture = ExtResource("2_mifxa")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sws8n"]
+texture = ExtResource("4_j61al")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0rbh6"]
+texture = ExtResource("4_j61al")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n6e00"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oei6h"]
+texture = ExtResource("5_kgjyy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ltw2i"]
+texture = ExtResource("6_2a8op")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_omjrx"]
+texture = ExtResource("7_ob6yd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvhpb"]
+texture = ExtResource("4_j61al")
+expand_margin_left = 24.0
+expand_margin_top = 24.0
+expand_margin_right = 24.0
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_naogw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yuq0m"]
+texture = ExtResource("5_kgjyy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_87jw8"]
+texture = ExtResource("6_2a8op")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxx41"]
+texture = ExtResource("7_ob6yd")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d4qob"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nolp3"]
+texture = ExtResource("5_kgjyy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xea72"]
+texture = ExtResource("6_2a8op")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_haiuj"]
+texture = ExtResource("7_ob6yd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n1wst"]
+
+[node name="NormalMode" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vm7eu")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_yqcta")
+
+[node name="RangeAndAttemptsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 157.0
+offset_top = -93.0
+offset_right = 555.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="NumberRangeLabel" type="Label" parent="RangeAndAttemptsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_ddj5p")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxTexture_sws8n")
+text = " Nummernbereich "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NumberRangeInput" type="SpinBox" parent="RangeAndAttemptsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.61
+max_value = 1e+06
+value = 100.0
+alignment = 2
+suffix = "              max. 1.000.000"
+
+[node name="AttemptsLabel" type="Label" parent="RangeAndAttemptsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_ddj5p")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxTexture_0rbh6")
+text = "Versuche"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AttemptsInput" type="SpinBox" parent="RangeAndAttemptsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.61
+min_value = 1.0
+value = 10.0
+alignment = 2
+suffix = "                           max. 100"
+
+[node name="ContinueButton" type="Button" parent="RangeAndAttemptsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_ddj5p")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n6e00")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oei6h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ltw2i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_omjrx")
+text = "Weiter"
+
+[node name="ModeSelectionContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.5
+offset_top = -103.0
+offset_right = 223.5
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 34
+
+[node name="Info" type="Label" parent="ModeSelectionContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_ddj5p")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxTexture_xvhpb")
+text = "Wer soll Raten?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerModeButton" type="Button" parent="ModeSelectionContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_ddj5p")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxEmpty_naogw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yuq0m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_87jw8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_oxx41")
+text = "Spieler"
+
+[node name="ComputerModeButton" type="Button" parent="ModeSelectionContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_ddj5p")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d4qob")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nolp3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xea72")
+theme_override_styles/normal = SubResource("StyleBoxTexture_haiuj")
+text = "Computer"
+
+[node name="Guessing Heroes" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -312.5
+offset_top = 35.0
+offset_right = 312.5
+offset_bottom = 129.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 7
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_ddj5p")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/normal = SubResource("StyleBoxTexture_n1wst")
+text = "Guessing Heroes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Info" type="Label" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 118.99
+offset_right = 1014.0
+offset_bottom = 173.51
+rotation = -0.242601
+size_flags_vertical = 6
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("3_ddj5p")
+theme_override_font_sizes/font_size = 41
+text = "Normal Mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = -84.0
+offset_right = 266.0
+offset_bottom = -17.0
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_ddj5p")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d4qob")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nolp3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xea72")
+theme_override_styles/normal = SubResource("StyleBoxTexture_haiuj")
+text = "Zurück"
+
+[node name="sfx_menu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_qrj4k")
+volume_db = -3.273
+bus = &"SFX"

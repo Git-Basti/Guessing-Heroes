@@ -1,0 +1,121 @@
+[gd_scene load_steps=15 format=3 uid="uid://c3luwq6e2fxst"]
+
+[ext_resource type="Script" path="res://scripts/story_mode.gd" id="1_01m7h"]
+[ext_resource type="Texture2D" uid="uid://b0wvjgw3b8la7" path="res://assets/Backround/Main Menu Backround.png" id="2_cj4mi"]
+[ext_resource type="FontFile" uid="uid://xnxfkyd78q6y" path="res://assets/fonts/alagard.ttf" id="3_52qbh"]
+[ext_resource type="Texture2D" uid="uid://dg68dmdeg7o3t" path="res://assets/ui/Button2.png" id="8_ee7vj"]
+[ext_resource type="Texture2D" uid="uid://d34aa8g6i5rtg" path="res://assets/ui/Button2-Hoverd.png" id="9_cvqpk"]
+[ext_resource type="Texture2D" uid="uid://bkgtbvgbr2rm4" path="res://assets/ui/Button2-Pressed.png" id="10_67305"]
+[ext_resource type="AudioStream" uid="uid://bc02lkoot6cfw" path="res://assets/Audio/switch_005.ogg" id="11_60ojh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8sasv"]
+texture = ExtResource("2_cj4mi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lhnc0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qeiax"]
+texture = ExtResource("8_ee7vj")
+expand_margin_left = 28.0
+expand_margin_top = 22.0
+expand_margin_right = 28.0
+expand_margin_bottom = 22.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8yehb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kxmdg"]
+texture = ExtResource("9_cvqpk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mpewu"]
+texture = ExtResource("10_67305")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2fbcn"]
+texture = ExtResource("8_ee7vj")
+
+[node name="Story-mode" type="Node2D"]
+script = ExtResource("1_01m7h")
+
+[node name="Hintergrund" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8sasv")
+
+[node name="GuessingHeroes" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 263.5
+offset_top = 35.0
+offset_right = 888.5
+offset_bottom = 129.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 7
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_52qbh")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/normal = SubResource("StyleBoxTexture_lhnc0")
+text = "Guessing Heroes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Info" type="Label" parent="."]
+offset_left = 710.0
+offset_top = 118.99
+offset_right = 1014.0
+offset_bottom = 173.51
+rotation = -0.242601
+size_flags_vertical = 6
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("3_52qbh")
+theme_override_font_sizes/font_size = 41
+text = "Story Mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 420.0
+offset_top = 287.0
+offset_right = 737.0
+offset_bottom = 368.0
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_52qbh")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxTexture_qeiax")
+text = "Cooming Soon,
+maybe"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 876.0
+offset_top = 558.0
+offset_right = 1125.0
+offset_bottom = 625.0
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_52qbh")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8yehb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kxmdg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mpewu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2fbcn")
+text = "Zurück"
+
+[node name="sfx_menu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_60ojh")
+volume_db = -3.273
+bus = &"SFX"
